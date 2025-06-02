@@ -1,0 +1,109 @@
+dsn: [edited out so not to share database name]
+schema: ai_septron
+tables:
+  death:
+    columns:
+      cause_concept_id:
+        nullable: true
+        primary: false
+        type: INTEGER
+      cause_source_concept_id:
+        nullable: true
+        primary: false
+        type: INTEGER
+      cause_source_value:
+        nullable: true
+        primary: false
+        type: VARCHAR(50)
+      death_date:
+        nullable: false
+        primary: false
+        type: DATE
+      death_datetime:
+        nullable: true
+        primary: false
+        type: TIMESTAMP WITHOUT TIME ZONE
+      death_type_concept_id:
+        nullable: true
+        primary: false
+        type: INTEGER
+      person_id:
+        nullable: false
+        primary: false
+        type: INTEGER
+    unique: []
+  person:
+    columns:
+      birth_datetime:
+        nullable: true
+        primary: false
+        type: TIMESTAMP WITHOUT TIME ZONE
+      care_site_id:
+        nullable: true
+        primary: false
+        type: INTEGER
+      day_of_birth:
+        nullable: true
+        primary: false
+        type: INTEGER
+      ethnicity_concept_id:
+        nullable: false
+        primary: false
+        type: INTEGER
+      ethnicity_source_concept_id:
+        nullable: true
+        primary: false
+        type: INTEGER
+      ethnicity_source_value:
+        nullable: true
+        primary: false
+        type: VARCHAR(50)
+      gender_concept_id:
+        nullable: false
+        primary: false
+        type: INTEGER
+      gender_source_concept_id:
+        nullable: true
+        primary: false
+        type: INTEGER
+      gender_source_value:
+        nullable: true
+        primary: false
+        type: VARCHAR(50)
+      location_id:
+        nullable: true
+        primary: false
+        type: INTEGER
+      month_of_birth:
+        nullable: true
+        primary: false
+        type: INTEGER
+      person_id:
+        nullable: false
+        primary: false
+        type: INTEGER
+      person_source_value:
+        nullable: true
+        primary: false
+        type: VARCHAR(50)
+      provider_id:
+        nullable: true
+        primary: false
+        type: INTEGER
+      race_concept_id:
+        nullable: false
+        primary: false
+        type: INTEGER
+      race_source_concept_id:
+        nullable: true
+        primary: false
+        type: INTEGER
+      race_source_value:
+        nullable: true
+        primary: false
+        type: VARCHAR(50)
+      year_of_birth:
+        nullable: false
+        primary: false
+        type: INTEGER
+    unique: []

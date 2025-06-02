@@ -1,0 +1,176 @@
+src-stats:
+- name: auto__death__cause_concept_id
+  query: SELECT cause_concept_id AS value FROM death GROUP BY value ORDER BY COUNT(cause_concept_id)
+    DESC
+- name: auto__death__cause_source_concept_id
+  query: SELECT cause_source_concept_id AS value FROM death GROUP BY value ORDER BY
+    COUNT(cause_source_concept_id) DESC
+- name: auto__death__death_date
+  query: SELECT death_date AS value FROM death GROUP BY value ORDER BY COUNT(death_date)
+    DESC
+- name: auto__death__death_datetime
+  query: SELECT death_datetime AS value FROM death GROUP BY value ORDER BY COUNT(death_datetime)
+    DESC
+- name: auto__death__death_type_concept_id
+  query: SELECT death_type_concept_id AS value FROM death GROUP BY value ORDER BY
+    COUNT(death_type_concept_id) DESC
+- name: auto__death__person_id
+  query: SELECT person_id AS value FROM death GROUP BY value ORDER BY COUNT(person_id)
+    DESC
+- name: auto__person__birth_datetime
+  query: SELECT birth_datetime AS value FROM person GROUP BY value ORDER BY COUNT(birth_datetime)
+    DESC
+- name: auto__person__day_of_birth
+  query: SELECT day_of_birth AS value FROM person GROUP BY value ORDER BY COUNT(day_of_birth)
+    DESC
+- name: auto__person__ethnicity_concept_id
+  query: SELECT ethnicity_concept_id AS value FROM person GROUP BY value ORDER BY
+    COUNT(ethnicity_concept_id) DESC
+- name: auto__person__ethnicity_source_concept_id
+  query: SELECT ethnicity_source_concept_id AS value FROM person GROUP BY value ORDER
+    BY COUNT(ethnicity_source_concept_id) DESC
+- name: auto__person__gender_source_concept_id
+  query: SELECT gender_source_concept_id AS value FROM person GROUP BY value ORDER
+    BY COUNT(gender_source_concept_id) DESC
+- name: auto__person__month_of_birth
+  query: SELECT month_of_birth AS value FROM person GROUP BY value ORDER BY COUNT(month_of_birth)
+    DESC
+- name: auto__person__race_source_concept_id
+  query: SELECT race_source_concept_id AS value FROM person GROUP BY value ORDER BY
+    COUNT(race_source_concept_id) DESC
+- name: auto__person__race_source_value
+  query: SELECT race_source_value AS value FROM person GROUP BY value ORDER BY COUNT(race_source_value)
+    DESC
+- name: auto__person__year_of_birth
+  query: SELECT year_of_birth AS value FROM person GROUP BY value ORDER BY COUNT(year_of_birth)
+    DESC
+- name: auto__person
+  query: SELECT AVG(gender_concept_id) AS mean__gender_concept_id, STDDEV(gender_concept_id)
+    AS stddev__gender_concept_id, AVG(location_id) AS mean__location_id, STDDEV(location_id)
+    AS stddev__location_id, AVG(person_id) AS mean__person_id, STDDEV(person_id) AS
+    stddev__person_id, AVG(race_concept_id) AS mean__race_concept_id, STDDEV(race_concept_id)
+    AS stddev__race_concept_id FROM person
+tables:
+  death:
+    num_rows_per_pass: 3
+    row_generators:
+    - columns_assigned:
+      - cause_concept_id
+      kwargs:
+        a: SRC_STATS["auto__death__cause_concept_id"]
+      name: dist_gen.zipf_choice
+    - columns_assigned:
+      - cause_source_concept_id
+      kwargs:
+        a: SRC_STATS["auto__death__cause_source_concept_id"]
+      name: dist_gen.zipf_choice
+    - columns_assigned:
+      - cause_source_value
+      name: generic.address.calling_code
+    - columns_assigned:
+      - death_date
+      kwargs:
+        a: SRC_STATS["auto__death__death_date"]
+      name: dist_gen.choice
+    - columns_assigned:
+      - death_datetime
+      kwargs:
+        a: SRC_STATS["auto__death__death_datetime"]
+      name: dist_gen.choice
+    - columns_assigned:
+      - death_type_concept_id
+      kwargs:
+        a: SRC_STATS["auto__death__death_type_concept_id"]
+      name: dist_gen.zipf_choice
+    - columns_assigned:
+      - person_id
+      kwargs:
+        a: SRC_STATS["auto__death__person_id"]
+      name: dist_gen.choice
+  person:
+    num_rows_per_pass: 10
+    row_generators:
+    - columns_assigned:
+      - birth_datetime
+      kwargs:
+        a: SRC_STATS["auto__person__birth_datetime"]
+      name: dist_gen.zipf_choice
+    - columns_assigned:
+      - care_site_id
+      name: generic.person.weight
+    - columns_assigned:
+      - day_of_birth
+      kwargs:
+        a: SRC_STATS["auto__person__day_of_birth"]
+      name: dist_gen.zipf_choice
+    - columns_assigned:
+      - ethnicity_concept_id
+      kwargs:
+        a: SRC_STATS["auto__person__ethnicity_concept_id"]
+      name: dist_gen.zipf_choice
+    - columns_assigned:
+      - ethnicity_source_concept_id
+      kwargs:
+        a: SRC_STATS["auto__person__ethnicity_source_concept_id"]
+      name: dist_gen.zipf_choice
+    - columns_assigned:
+      - ethnicity_source_value
+      name: generic.address.calling_code
+    - columns_assigned:
+      - gender_concept_id
+      kwargs:
+        mean: SRC_STATS["auto__person"][0]["mean__gender_concept_id"]
+        sd: SRC_STATS["auto__person"][0]["stddev__gender_concept_id"]
+      name: dist_gen.normal
+    - columns_assigned:
+      - gender_source_concept_id
+      kwargs:
+        a: SRC_STATS["auto__person__gender_source_concept_id"]
+      name: dist_gen.zipf_choice
+    - columns_assigned:
+      - gender_source_value
+      name: generic.text.word
+    - columns_assigned:
+      - location_id
+      kwargs:
+        mean: SRC_STATS["auto__person"][0]["mean__location_id"]
+        sd: SRC_STATS["auto__person"][0]["stddev__location_id"]
+      name: dist_gen.uniform_ms
+    - columns_assigned:
+      - month_of_birth
+      kwargs:
+        a: SRC_STATS["auto__person__month_of_birth"]
+      name: dist_gen.zipf_choice
+    - columns_assigned:
+      - person_id
+      kwargs:
+        mean: SRC_STATS["auto__person"][0]["mean__person_id"]
+        sd: SRC_STATS["auto__person"][0]["stddev__person_id"]
+      name: dist_gen.uniform_ms
+    - columns_assigned:
+      - person_source_value
+      name: generic.address.calling_code
+    - columns_assigned:
+      - provider_id
+      name: generic.person.weight
+    - columns_assigned:
+      - race_concept_id
+      kwargs:
+        mean: SRC_STATS["auto__person"][0]["mean__race_concept_id"]
+        sd: SRC_STATS["auto__person"][0]["stddev__race_concept_id"]
+      name: dist_gen.normal
+    - columns_assigned:
+      - race_source_concept_id
+      kwargs:
+        a: SRC_STATS["auto__person__race_source_concept_id"]
+      name: dist_gen.zipf_choice
+    - columns_assigned:
+      - race_source_value
+      kwargs:
+        a: SRC_STATS["auto__person__race_source_value"]
+      name: dist_gen.zipf_choice
+    - columns_assigned:
+      - year_of_birth
+      kwargs:
+        a: SRC_STATS["auto__person__year_of_birth"]
+      name: dist_gen.zipf_choice

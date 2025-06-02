@@ -1,0 +1,64 @@
+auto__death__cause_concept_id:
+- value: 0
+auto__death__cause_source_concept_id:
+- value: 0
+auto__death__death_date:
+- value: 1984-07-08
+- value: 1985-03-07
+- value: 1970-04-11
+auto__death__death_datetime:
+- value: 1970-04-11 00:00:00
+- value: 1985-03-07 23:00:00
+- value: 1984-07-08 14:30:00
+auto__death__death_type_concept_id:
+- value: 32817
+auto__death__person_id:
+- value: 3935
+- value: 4819
+- value: 3712
+auto__person:
+- mean__gender_concept_id: 8508.229471316086
+  mean__location_id: 3766.6647919010124
+  mean__person_id: 3826.8762654668167
+  mean__race_concept_id: 43032770.885264345
+  stddev__gender_concept_id: 285.94655754197
+  stddev__location_id: 2158.41319918358
+  stddev__person_id: 2209.481445825536
+  stddev__race_concept_id: 6309195.5453
+auto__person__birth_datetime:
+- value: 1970-01-01 00:00:00
+auto__person__day_of_birth:
+- value: 1
+auto__person__ethnicity_concept_id:
+- value: 0
+auto__person__ethnicity_source_concept_id:
+- value: 0
+auto__person__gender_source_concept_id:
+- value: 0
+auto__person__month_of_birth:
+- value: 1
+auto__person__race_source_concept_id:
+- value: 0
+auto__person__race_source_value:
+- value: Other White Background
+- value: Not Stated / Unknown
+- value: White British
+- value: Not Yet Asked
+- value: Other Ethnic Group
+- value: Asian Bangladeshi
+- value: Black African
+- value: Other Asian Background
+- value: Other Mixed Background
+- value: Refused to Give
+- value: Other Black Background
+- value: '*Unspecified'
+- value: Asian Indian
+- value: Chinese
+- value: Black Caribbean
+- value: Mixed White and Asian
+- value: Mixed White and Black Caribbean
+- value: Mixed White and Black African
+- value: Asian Pakistani
+- value: White Irish
+auto__person__year_of_birth:
+- value: 1970
