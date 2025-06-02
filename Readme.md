@@ -1,7 +1,7 @@
 # Generating synthetic data in UCLH
 
 ## Outline
-This repository is a start towards creating a home for the processes and tools to generate and release synthetic hospital data at UCLH. It is work in progress and will change. 
+This repository is a start towards creating a home for the processes and tools to generate and release synthetic hospital data at UCLH. It is work in progress and will change. This documentation will also be synched to Slab where it will look prettier.
 
 ## What are synthetic data ?
 Synthetic data are artificially generated rather than referring to a particular individual or event. Synthetic data reduce the risk of releasing information about individual patients. See these [good introductory resources about synthetic data](https://www.researchdata.scot/engage-and-learn/data-explainers/intro-to-synthetic-data/). 
