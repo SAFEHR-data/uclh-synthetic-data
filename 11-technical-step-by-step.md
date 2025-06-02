@@ -54,16 +54,6 @@ sqlsynthgen make-vocab
 sqlsynthgen make-stats
 ```
 
-## summary of commands & what they do
-
-command  | interactive | file created | file contents
-------------- | ---- | --------- | ---------
-make-tables | no | orm.yaml | column names & brief attributes e.g. numeric or dates 
-configure-tables | yes | config.yaml | what to do with each table e.g. ignore, copy, generate, num_rows_per_pass: 10
-configure-generators | yes | config.yaml | choose generator for each column e.g. generic.datetime.datetime
-make-vocab (optional) | no | tablename.yaml.gz | make vocab tables if there are any
-make-stats (optional) | no | src-stats.yaml | make stats from the data that some generators use
-
 ## destination for created data 
 
 Needs to be a database in which you have write access to a schema. Can be the same database as the source or different.
@@ -90,6 +80,20 @@ sqlsynthgen remove-data
 # set num passes to produce more rows of data
 sqlsynthgen create-data --num-passes=5
 ```
+
+## summary of commands & what they do
+
+command  | interactive | file created | result
+------------- | ---- | --------- | ---------
+make-tables | no | orm.yaml | column names & brief attributes e.g. numeric or dates 
+configure-tables | yes | config.yaml | what to do with each table e.g. ignore, copy, generate, num_rows_per_pass: 10
+configure-generators | yes | config.yaml | choose generator for each column e.g. generic.datetime.datetime
+make-vocab (optional) | no | tablename.yaml.gz | make vocab tables if there are any
+make-stats (optional) | no | src-stats.yaml | make stats from the data that some generators use
+create-tables | no | - | creates tables in the database
+create-generators | no | ssg.py | create generators
+create-data | no | - | add rows to tables in the database 
+remove-data | no | - | remove all rows from the database tables 
 
 ## check created data from R
 ```
