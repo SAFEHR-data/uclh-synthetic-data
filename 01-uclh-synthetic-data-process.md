@@ -18,9 +18,12 @@ UCLH have developed/extended a tool to create synthetic data from our data extra
 1.  we still need to work out how best routinely to get the synthetic data out of the database and into e.g. csv files that can be published elsewhere. 
 
 ## How we avoid releasing sensitive information
-1. The OMOP data extracts that we will use datafaker on already contain no patient identifiers
+1. The OMOP data extracts used by datafaker contain no patient identifiers
+1. Each data column is created independently (currently) so there is no chance that a patient could be identified by a combination of rare events
 1. We will review the configuration files to ensure they contain no information that could be sensitive
 1. We will review the generated synthetic data to ensure they contain no information that could be sensitive
 
-## Using datafaker (the step-by-step technical version)
-TODO
+## How we will store configuration files for review
+We plan to store [configuration files in these folders](resources/configuration-files/) so that they can be reviewed and changes tracked.
+
+[Using datafaker - the step-by-step technical version](11-technical-step-by-step.md)

@@ -2,7 +2,7 @@
 
 (file: 11-technical-step-by-step.md)
 
-Commands to run from the Windows CMD prompt or the Terminal within this RStudio project (recommended).
+Commands to run from the Windows CMD prompt or the Terminal within this RStudio project (recommended as that allows you to view & edit the configuration yaml files).
 
 This assumes that you already have python installed, otherwise see these [python installation instructions](https://uclh.slab.com/posts/install-python-on-windows-e-g-on-an-nhs-laptop-017hz5cd). 
 
@@ -94,6 +94,7 @@ create-tables | no | - | creates tables in the database
 create-generators | no | ssg.py | create generators
 create-data | no | - | add rows to tables in the database 
 remove-data | no | - | remove all rows from the database tables 
+
 
 ## check created data from R
 ```
