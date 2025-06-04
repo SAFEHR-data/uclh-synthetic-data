@@ -25,10 +25,12 @@ table to create | columns in the table
 person | person_id, year_of_birth
 death | person_id, death_date
 
+`person_id` is what is called a database key, i.e. it links records for the same person in different tables.
+
 ### configuration files for the first example
 
 #### src-stats.yaml
-Shows that there are only 3 values for `death_date` in the source data and only one for `year_of_birth`. The one for `year_of_birth` is because the dates in UCLH OMOP extracts are shifted to be all relative to birth in 1970 to reduce risk of patient identification 
+Shows that there are only 3 values for `death_date` in the source data and only one for `year_of_birth`. The one for `year_of_birth` is because the dates in UCLH OMOP extracts are shifted to be all relative to birth in 1970 to reduce risk of patient identification.
 
 ```
 auto__death__death_date:
@@ -54,6 +56,8 @@ auto__person__year_of_birth:
 ``` 
  
 #### orm.yaml  
+
+Shows the table and column names and what types of data they contain. The part that mentions `unique` ensures that the synthetic data does not contain people who have died more than once.
 
 ```
 dsn: [database information]
@@ -89,7 +93,7 @@ tables:
 ```  
   
 #### config.yaml
-In this example the synthetic data for the two columns that are not database keys are randomly chosen from the values in the source data.
+In this example the synthetic data for the two columns that are not database keys are randomly chosen from the values in the source data. This is indicated by `dist_gen.choice`.
 
 ```
 src-stats:
