@@ -5,3 +5,10 @@ This folder is a draft of a location to store configuration files used to genera
 
 ## Folder structure
 This folder can contain folders for templates and projects.
+
+## Configuration files
+file | outline
+------- | --------- 
+src-stats.yaml | summary stats from the data used to generate some of the synthetic data, includes comments
+orm.yaml | column names & brief attributes e.g. numeric or dates 
+config.yaml | detailed configurations used to generate the synthetic data
