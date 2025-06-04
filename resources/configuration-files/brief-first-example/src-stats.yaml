@@ -1,0 +1,20 @@
+auto__death__death_date:
+  comments:
+  - All the values that appear in column death_date of table death
+  queries:
+    date: '2025-06-04 22:00:27'
+    query: SELECT death_date AS value FROM death GROUP BY value ORDER BY COUNT(death_date)
+      DESC
+  results:
+  - value: 1985-03-07
+  - value: 1970-04-11
+  - value: 1984-07-08
+auto__person__year_of_birth:
+  comments:
+  - All the values that appear in column year_of_birth of table person
+  queries:
+    date: '2025-06-04 22:00:27'
+    query: SELECT year_of_birth AS value FROM person GROUP BY value ORDER BY COUNT(year_of_birth)
+      DESC
+  results:
+  - value: 1970

@@ -1,5 +1,5 @@
-dsn: [edited out so not to share database name]
-schema: ai_septron
+dsn: [database information]
+schema: [database information]
 tables:
   death:
     columns:
