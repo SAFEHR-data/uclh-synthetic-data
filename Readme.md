@@ -9,18 +9,18 @@ Synthetic data are artificially generated rather than referring to a particular 
 Not all synthetic data are the same. They range from **low fidelity** data that are only broadly similar to real data to **high fidelity** that more closely resemble them. 
 
 ## What can synthetic data be used for ?
-Different fidelities of synthetic data have different uses. Lower fidelity synthetic data can counter-intuitively be more useful because they have a lower risk of releasing sensitive information and can be made more openly available. 
+Different fidelities of synthetic data have different uses. Lower fidelity synthetic data can, counter-intuitively, be more useful because they have a lower risk of releasing sensitive information and can be made more openly available. 
 
 These are some of the uses of synthetic data :
 
 1. Code development
 1. Training & teaching
 1. Data discovery
-1. Federation
+1. Federation (doing studies on our own real data using code that others have developed on our synthetic data)
 
 ## Generating synthetic data in UCLH 
 
-In UCLH we are developing tools and processes to generate and release synthetic data safely.
+In UCLH we are developing tools and processes to generate and release synthetic data safely. Initially UCLH will only be releasing **low fidelity** synthetic data.
 
 In short this will involve :
 * summarising attributes of real data

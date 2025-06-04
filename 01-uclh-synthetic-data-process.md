@@ -12,10 +12,10 @@ UCLH have developed/extended a tool to create synthetic data from our data extra
     + the names of the tables and columns in the data extract
     + some broad summary statistics for the data in each column
 1. datafaker can be used to refine the configuration files according to
-    + which tables they want to include in the synthetic data
-    + for each column how they want to generate the synthetic data
+    + which tables we want to include in the synthetic data
+    + for each column how we want to generate the synthetic data
 1. from these configuration files datafaker can be used to create & populate synthetic data tables in an existing database
-1.  we still need to work out how best routinely to get the synthetic data out of the database and into e.g. csv files that can be published elsewhere. 
+1.  we will export synthetic data from the database into e.g. csv files that can be published elsewhere 
 
 ## How we avoid releasing sensitive information
 1. The OMOP data extracts used by datafaker contain no patient identifiers
