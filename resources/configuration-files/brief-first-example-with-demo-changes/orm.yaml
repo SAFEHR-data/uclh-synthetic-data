@@ -1,3 +1,4 @@
+#DEMONSTRATION of new text added and how these changes can be viewed in Github.
 dsn: postgresql://andsouth:***@uclvlddpragae06.xuclh.nhs.uk:15432/omop_reservoir
 schema: ai_septron
 tables:
