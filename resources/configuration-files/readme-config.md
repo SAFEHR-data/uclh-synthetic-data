@@ -30,7 +30,9 @@ death | person_id, death_date
 ### configuration files for the first example
 
 #### src-stats.yaml
-Shows that there are only 3 values for `death_date` in the source data and only one for `year_of_birth`. The one for `year_of_birth` is because the dates in UCLH OMOP extracts are shifted to be all relative to birth in 1970 to reduce risk of patient identification.
+Summary stats for source data columns depending on data type and options chosen for synthetic generation.
+
+In this case shows that there are only 3 unique values for `death_date` in the source data and only one for `year_of_birth`. The one for `year_of_birth` is because the dates in UCLH OMOP extracts are shifted to be all relative to birth in 1970 to reduce risk of patient identification.
 
 ```
 auto__death__death_date:
@@ -93,7 +95,13 @@ tables:
 ```  
   
 #### config.yaml
-In this example the synthetic data for the two columns that are not database keys are randomly chosen from the values in the source data. This is indicated by `dist_gen.choice`.
+The first part indicated by`src-stats:` creates the file `src-stats.yaml` shown above. 
+
+The second part starting `tables:` is used to create the rows and columns in the synthetic tables.
+
+In this example the synthetic data for the two columns that are not database keys (`year_of_birth` and `death_date`) are randomly chosen from the values in the source data. This is indicated by `dist_gen.choice`.
+
+`num_rows_per_pass:` is set higher for the `person` than `death` tables so that not all of the patients in the synthetic data are marked as having died.
 
 ```
 src-stats:
