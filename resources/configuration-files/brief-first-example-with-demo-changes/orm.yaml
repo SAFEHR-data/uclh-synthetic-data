@@ -1,0 +1,30 @@
+dsn: postgresql://andsouth:***@uclvlddpragae06.xuclh.nhs.uk:15432/omop_reservoir
+schema: ai_septron
+tables:
+  death:
+    columns:
+      death_date:
+        nullable: false
+        primary: false
+        type: DATE
+      person_id:
+        nullable: false
+        primary: false
+        foreign_keys:
+          - person.person_id        
+        type: INTEGER
+    unique:
+      - name: unique_person
+        columns: 
+          - person_id        
+  person:
+    columns:
+      person_id:
+        nullable: false
+        primary: true
+        type: INTEGER
+      year_of_birth:
+        nullable: false
+        primary: false
+        type: INTEGER
+    unique: []

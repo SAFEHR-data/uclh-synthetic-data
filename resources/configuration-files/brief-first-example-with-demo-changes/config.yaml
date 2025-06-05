@@ -1,0 +1,28 @@
+src-stats:
+- comments:
+  - All the values that appear in column death_date of table death
+  name: auto__death__death_date
+  query: SELECT death_date AS value FROM death GROUP BY value ORDER BY COUNT(death_date)
+    DESC
+- comments:
+  - All the values that appear in column year_of_birth of table person
+  name: auto__person__year_of_birth
+  query: SELECT year_of_birth AS value FROM person GROUP BY value ORDER BY COUNT(year_of_birth)
+    DESC
+tables:
+  death:
+    num_rows_per_pass: 3
+    row_generators:
+    - columns_assigned:
+      - death_date
+      kwargs:
+        a: SRC_STATS["auto__death__death_date"]["results"]
+      name: dist_gen.choice
+  person:
+    num_rows_per_pass: 10
+    row_generators:
+    - columns_assigned:
+      - year_of_birth
+      kwargs:
+        a: SRC_STATS["auto__person__year_of_birth"]["results"]
+      name: dist_gen.choice
