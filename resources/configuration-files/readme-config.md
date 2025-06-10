@@ -133,3 +133,31 @@ tables:
         a: SRC_STATS["auto__person__year_of_birth"]["results"]
       name: dist_gen.choice
 ```
+
+### resulting synthetic data for the first example
+
+The files above lead to the generation of two data tables shown briefly here that are randomly sampled from the attribute data.
+
+#### synthetic person table
+
+person_id year_of_birth
+1          1970
+2          1970
+3          1970
+4          1970
+5          1970
+6          1970
+...
+30          1970
+
+#### synthetic death table
+death_date person_id
+1984-07-08         7
+1970-04-11         9
+1985-03-07         5
+1970-04-11        19
+1985-03-07        17
+1985-03-07        15
+1970-04-11         6
+1984-07-08        24
+1984-07-08        14
