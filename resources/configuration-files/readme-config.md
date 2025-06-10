@@ -1,7 +1,7 @@
 # configuration-files readme
 
 ## Outline
-This folder is where we plan to store configuration files used to generate UCLH synthetic data. The software datafaker/sqlsynthgen can create initial versions of these config files by looking at a data extract. These initial versions of the config files contain the names of the tables and columns in the data extract. The files can then be modified through an interactive process where the user can choose how to populate the tables and columns in the synthetic data to be created.
+This folder is where we plan to store configuration files used to generate UCLH synthetic data. The software datafaker/sqlsynthgen can create initial versions of these config files by looking at a data extract. These initial versions of the config files contain the names of the tables and columns in the data extract. The files can then be modified through an interactive process where the user can choose how to populate the tables and columns in the synthetic data.
 
 ## Folder structure
 This folder can contain folders for templates and projects.
@@ -25,7 +25,7 @@ table to create | columns in the table
 person | person_id, year_of_birth
 death | person_id, death_date
 
-`person_id` is what is called a database key, i.e. it links records for the same person in different tables.
+`person_id` is what is called a database key, i.e. it links records for the same person in different tables. `person_id` is NOT an identifier like an NHS number or hospital number that is unique to a particular individual. `person_id` is simply a sequence that goes from 1 to the number of people in a data extract. Each time that we regenerate a data extract `person_id` will change. Similarly, other `*_id` variables do not uniquely refer to particular things that happened in the hospital.  
 
 ### configuration files for the first example
 
