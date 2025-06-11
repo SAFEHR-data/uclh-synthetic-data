@@ -1,0 +1,149 @@
+auto__death__cause_concept_id:
+  comments:
+  - All the values that appear in column cause_concept_id of table death
+  queries:
+    date: '2025-06-11 16:17:44'
+    query: SELECT cause_concept_id AS value FROM death GROUP BY value ORDER BY COUNT(cause_concept_id)
+      DESC
+  results:
+  - value: 0
+auto__death__cause_source_concept_id:
+  comments:
+  - All the values that appear in column cause_source_concept_id of table death
+  queries:
+    date: '2025-06-11 16:17:44'
+    query: SELECT cause_source_concept_id AS value FROM death GROUP BY value ORDER
+      BY COUNT(cause_source_concept_id) DESC
+  results:
+  - value: 0
+auto__death__death_date:
+  comments:
+  - All the values that appear in column death_date of table death
+  queries:
+    date: '2025-06-11 16:17:44'
+    query: SELECT death_date AS value FROM death GROUP BY value ORDER BY COUNT(death_date)
+      DESC
+  results:
+  - value: 1985-03-07
+  - value: 1970-04-11
+  - value: 1984-07-08
+auto__death__death_datetime:
+  comments:
+  - All the values that appear in column death_datetime of table death
+  queries:
+    date: '2025-06-11 16:17:44'
+    query: SELECT death_datetime AS value FROM death GROUP BY value ORDER BY COUNT(death_datetime)
+      DESC
+  results:
+  - value: 1970-04-11 00:00:00
+  - value: 1985-03-07 23:00:00
+  - value: 1984-07-08 14:30:00
+auto__death__death_type_concept_id:
+  comments:
+  - All the values that appear in column death_type_concept_id of table death
+  queries:
+    date: '2025-06-11 16:17:44'
+    query: SELECT death_type_concept_id AS value FROM death GROUP BY value ORDER BY
+      COUNT(death_type_concept_id) DESC
+  results:
+  - value: 32817
+auto__person__birth_datetime:
+  comments:
+  - All the values that appear in column birth_datetime of table person
+  queries:
+    date: '2025-06-11 16:17:44'
+    query: SELECT birth_datetime AS value FROM person GROUP BY value ORDER BY COUNT(birth_datetime)
+      DESC
+  results:
+  - value: 1970-01-01 00:00:00
+auto__person__day_of_birth:
+  comments:
+  - All the values that appear in column day_of_birth of table person
+  queries:
+    date: '2025-06-11 16:17:44'
+    query: SELECT day_of_birth AS value FROM person GROUP BY value ORDER BY COUNT(day_of_birth)
+      DESC
+  results:
+  - value: 1
+auto__person__ethnicity_concept_id:
+  comments:
+  - All the values that appear in column ethnicity_concept_id of table person
+  queries:
+    date: '2025-06-11 16:17:44'
+    query: SELECT ethnicity_concept_id AS value FROM person GROUP BY value ORDER BY
+      COUNT(ethnicity_concept_id) DESC
+  results:
+  - value: 0
+auto__person__ethnicity_source_concept_id:
+  comments:
+  - All the values that appear in column ethnicity_source_concept_id of table person
+  queries:
+    date: '2025-06-11 16:17:44'
+    query: SELECT ethnicity_source_concept_id AS value FROM person GROUP BY value
+      ORDER BY COUNT(ethnicity_source_concept_id) DESC
+  results:
+  - value: 0
+auto__person__gender_concept_id:
+  comments:
+  - All the values that appear in column gender_concept_id of table person
+  queries:
+    date: '2025-06-11 16:17:44'
+    query: SELECT gender_concept_id AS value FROM person GROUP BY value ORDER BY COUNT(gender_concept_id)
+      DESC
+  results:
+  - value: 8507
+  - value: 8532
+  - value: 0
+auto__person__gender_source_concept_id:
+  comments:
+  - All the values that appear in column gender_source_concept_id of table person
+  queries:
+    date: '2025-06-11 16:17:44'
+    query: SELECT gender_source_concept_id AS value FROM person GROUP BY value ORDER
+      BY COUNT(gender_source_concept_id) DESC
+  results:
+  - value: 0
+auto__person__month_of_birth:
+  comments:
+  - All the values that appear in column month_of_birth of table person
+  queries:
+    date: '2025-06-11 16:17:44'
+    query: SELECT month_of_birth AS value FROM person GROUP BY value ORDER BY COUNT(month_of_birth)
+      DESC
+  results:
+  - value: 1
+auto__person__race_concept_id:
+  comments:
+  - All the values that appear in column race_concept_id of table person
+  queries:
+    date: '2025-06-11 16:17:44'
+    query: SELECT race_concept_id AS value FROM person GROUP BY value ORDER BY COUNT(race_concept_id)
+      DESC
+  results:
+  - value: 37394011
+  - value: 46285826
+  - value: 46286810
+  - value: 46285839
+  - value: 46285833
+  - value: 46286811
+  - value: 46285835
+  - value: 46285830
+  - value: 46285837
+  - value: 0
+  - value: 46285831
+  - value: 46285836
+  - value: 46285834
+  - value: 46285829
+  - value: 46285827
+  - value: 46285828
+  - value: 46285832
+  - value: 46285824
+auto__person__year_of_birth:
+  comments:
+  - All the values that appear in column year_of_birth of table person
+  queries:
+    date: '2025-06-11 16:17:44'
+    query: SELECT year_of_birth AS value FROM person GROUP BY value ORDER BY COUNT(year_of_birth)
+      DESC
+  results:
+  - value: 1970
