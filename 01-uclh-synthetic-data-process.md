@@ -23,6 +23,9 @@ UCLH have developed/extended a tool to create synthetic data from our data extra
 1. We will review the configuration files to ensure they contain no information that could be sensitive
 1. We will review the generated synthetic data to ensure they contain no information that could be sensitive
 
+## Adding disclaimer to the synthetic data
+"These data are artificially generated, any resemblance to real patients is coincidental."
+
 ## How we will store configuration files for review
 We plan to store [configuration files in these folders](resources/configuration-files/) so that they can be reviewed and changes tracked.
 
